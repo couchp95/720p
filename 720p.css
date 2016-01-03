@@ -1,0 +1,9 @@
+/* CSS declarations go here */
+
+#content {font-size: 1.1em; padding: 0 0 10px;}
+#content {border-bottom: 1px dotted #c5c5c5; margin: 0 0 20px; overflow: hidden;}
+h2 {color: #222;}
+li {list-style-type: inherit;}
+ul {margin: 10px 0; padding: 0 0 0 20px}
+p {margin: 5px 0;}
+img{border:1px solid #999;padding:1px;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;box-shadow:0 1px 2px #bbb;-moz-box-shadow:0 1px 2px #bbb;-webkit-box-shadow:0 1px 2px #bbb; margin: 0 5px 5px 0;}

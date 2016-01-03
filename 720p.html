@@ -1,0 +1,87 @@
+<head>
+  <title>720p</title>
+
+
+  <style type="text/css">
+
+
+ul {margin: 10px 0; padding: 0 0 0 20px}
+.content {font-size: 1.1em; padding: 0 0 10px;}
+.content {border-bottom: 1px dotted #c5c5c5; margin: 0 0 20px; overflow: hidden;}
+.content h2 {color: #222;}
+.content li {list-style-type: inherit;}
+.content ul {margin: 10px 0; padding: 0 0 0 20px}
+.content p {margin: 5px 0;}
+.content img{border:1px solid #999;padding:1px;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;box-shadow:0 1px 2px #bbb;-moz-box-shadow:0 1px 2px #bbb;-webkit-box-shadow:0 1px 2px #bbb; margin: 0 5px 5px 0;}
+
+
+</style>
+</head>
+ 
+<body>
+ <h1>最新发布的{{total}}部720p电影</h1>
+<!--    <ul>
+      {{#each releases}}
+      {{> release}}
+      {{/each}}
+    </ul>
+-->
+    {{> Movies}}
+
+</body>
+
+
+
+
+<template name="Movies">
+    {{> pagesNav}} 
+    {{> pages}}
+    {{> pagesNav}}  <!--Bottom navigation-->
+</template>
+
+
+<template name="layout">
+  <div class="container">
+    <header class="navbar navbar-default" role="navigation">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Microscope</a>
+      </div>
+    </header>
+    <div id="main" class="row-fluid">
+      {{> Movies}}
+    </div>
+  </div>
+</template>
+
+<template name="release">
+  <h2><strong>({{year}}) {{title}} - {{titleCN}}</strong></h2>	
+  <div class="content">
+	 <table border="0">
+    <td style="text-align:left">
+  	<img src={{Poster}} height="320" style="vertical-align:middle">
+  </td>
+
+  <td style="vertical-align:top">
+
+    <p>
+      <strong>导演：</strong>{{#each directors}}{{directors.name}}{{/each}}
+      <br>
+      <strong>类型：</strong>{{Genre}}
+    <br>
+    <strong>时长：</strong>{{Runtime}}
+    <br>  
+    <strong>评分：</strong><a href="http://www.imdb.com/title/{{imdbID}}">IMDB</a>
+    <strong>{{imdbRating}}</strong> ({{imdbVotes}}人) | <a href="http://movie.douban.com/subject/{{doubanID}}">豆瓣</a>
+    <strong>{{ratingDB}}</strong> ({{votedDB}}人)
+    <br>
+    <strong>上映日期：</strong>{{Released}} <strong>国家：</strong>{{Country}}
+     <br>
+    Bluray：{{pubDate}}
+ 
+  </p>
+   <p><strong>简介：</strong>{{summary}}</p>
+ </td>
+    </table>
+  </div>
+
+</template>
